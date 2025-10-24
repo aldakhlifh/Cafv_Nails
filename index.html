@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafv Nails ✨</title>
+  <title>Cafv Nails | Beauty & Elegance</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <style>
     * {
       margin: 0;
@@ -17,108 +16,122 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      background: linear-gradient(135deg, #ffe6f0, #ffd6e0);
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
+    body, html {
+      height: 100%;
+      overflow: hidden;
     }
 
-    header {
-      margin-bottom: 40px;
+    /* ===== VIDEO BACKGROUND ===== */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Overlay lembut */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 230, 240, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+
+    /* Konten utama */
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #333;
+      z-index: 1;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: #d63384;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      animation: fadeIn 1.5s ease;
     }
 
     p {
       font-size: 1.1rem;
-      color: #555;
-      max-width: 500px;
-      margin: 0 auto 20px;
+      color: #444;
+      max-width: 600px;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
     }
 
     .btn {
-      background-color: #d63384;
+      background: #d63384;
       color: #fff;
+      padding: 12px 35px;
       border: none;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      border-radius: 30px;
       text-decoration: none;
-      display: inline-block;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3);
+      animation: fadeIn 2.5s ease;
     }
 
     .btn:hover {
-      background-color: #c21872;
-      transform: scale(1.05);
-    }
-
-    .gallery {
-      margin-top: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.1);
+      background: #c21872;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(214, 51, 132, 0.4);
     }
 
     footer {
-      margin-top: 60px;
+      position: absolute;
+      bottom: 15px;
+      color: #666;
       font-size: 0.9rem;
-      color: #777;
+      z-index: 1;
+      animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
+  <!-- Video background -->
+  <video autoplay loop muted playsinline class="video-bg">
+    <source src="assets/videos/bg.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video background.
+  </video>
 
-  <header>
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Konten utama -->
+  <div class="content">
     <h1>Welcome to Cafv Nails 💅</h1>
     <p>
-      Kami menghadirkan keindahan dan kepercayaan diri melalui seni kuku yang elegan.
-      Temukan gaya nail art favoritmu dengan sentuhan lembut dan warna pink yang menawan!
+      Temukan keindahan dan pesona kuku dengan sentuhan profesional.  
+      Kami menghadirkan layanan nail art elegan, lembut, dan berkelas untuk mempercantik harimu.
     </p>
     <a href="#" class="btn">Lihat Katalog</a>
-  </header>
+  </div>
 
-  <section class="gallery">
-    <img src="https://i.pinimg.com/564x/6a/03/fc/6a03fc1a7f5c9c4291b24cf1b4c2f9cf.jpg" alt="Nail Art 1">
-    <img src="https://i.pinimg.com/564x/9f/f2/d5/9ff2d54ce20f8d0d30202e3f070d96b2.jpg" alt="Nail Art 2">
-    <img src="https://i.pinimg.com/564x/8d/65/4a/8d654a38b74c1a8d528ab0f9c33a61b3.jpg" alt="Nail Art 3">
-    <img src="https://i.pinimg.com/564x/b3/ef/12/b3ef12b3db726e5823d227b1f92e5f7d.jpg" alt="Nail Art 4">
-  </section>
-
-  <footer>
-    © 2025 Cafv Nails | Made with 💖 by Alda Kholifah
-  </footer>
-
+  <footer>© 2025 Cafv Nails | Crafted with 💖 by Alda Kholifah</footer>
 </body>
 </html>
